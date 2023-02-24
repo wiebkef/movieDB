@@ -1,5 +1,5 @@
 import React from "react";
-import myLogo from "./logoCookbook.png";
+import myLogo from './logo_4.png';
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
