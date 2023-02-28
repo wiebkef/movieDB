@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import myLogo from './logo_4.png';
+import myLogo from './logo_CN.png';
 import { NavLink } from 'react-router-dom';
 import Subscribe from './Subscribe';
 import './Header.css';
@@ -33,7 +33,7 @@ function Header() {
                 style={{ width: 65, marginTop: 2, marginRight: 20 }}
                 alt="logo"
               />
-              Movie Place
+              CINEHOUSE
             </Navbar.Brand>
           </NavLink>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
