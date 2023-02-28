@@ -6,7 +6,6 @@ import SearchResults from "./components/SearchResults";
 import Recipes from "./components/Movies";
 import MovieDetails from "./components/MovieDetails";
 import Footer from "./components/Footer";
-import AboutUs from "./components/AboutUs";
 import Auth from "./components/Auth";
 import NewMovie from "./components/NewMovie";
 import UpdateMovie from "./components/UpdateMovie";
@@ -38,7 +37,6 @@ function App() {
           element={<SearchResults query={query} />}
         />
         <Route path="/recipe/:id" element={<MovieDetails />} />
-        <Route path="/about" element={<AboutUs />} />
         <Route path="/login" element={<Auth />} />
       </Routes>
       <Footer />

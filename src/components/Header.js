@@ -3,9 +3,10 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import myLogo from './logoCookbook.png';
+import myLogo from './logo_CN.png';
 import { NavLink } from 'react-router-dom';
 import Subscribe from './Subscribe';
+import './Header.css';
 
 function Header() {
   const [showModal, setShowModal] = useState(false);
@@ -20,7 +21,6 @@ function Header() {
         className="color-nav"
         collapseOnSelect
         expand="lg"
-        bg="#C0DEFF"
         variant="light"
         style={{ width: '100%', position: 'sticky', top: 0 }}
       >
@@ -33,7 +33,7 @@ function Header() {
                 style={{ width: 65, marginTop: 2, marginRight: 20 }}
                 alt="logo"
               />
-              Perfect Burgers
+              CINEHOUSE
             </Navbar.Brand>
           </NavLink>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -42,24 +42,49 @@ function Header() {
               <NavLink className="nav-link" to="/">
                 Home
               </NavLink>
-              <NavLink className="nav-link" to="/about">
-                About Us
+              <NavLink className="nav-link" to="/plans">
+              Plans
               </NavLink>
               <NavDropdown title="Categories">
                 <NavDropdown.Item>
                   <NavLink className="nav-link" to="/top">
-                    TOP Recipes
+                    TOP Films
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <NavLink className="nav-link" to="/latest">
-                    Latest Recipes
+                  <NavLink className="nav-link" to="/action">
+                  Action
+                  </NavLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <NavLink className="nav-link" to="/adventure">
+                  Adventure
+                  </NavLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <NavLink className="nav-link" to="/horror">
+                  Horror
+                  </NavLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <NavLink className="nav-link" to="/sci-fi">
+                  Sci-fi
+                  </NavLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <NavLink className="nav-link" to="/comedy">
+                  Comedy
+                  </NavLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <NavLink className="nav-link" to="/cartoons">
+                  Сartoons
                   </NavLink>
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
             <Nav>
-              <Nav.Link onClick={handleSubscribeClick}>Subscribe</Nav.Link>
+              <Nav.Link onClick={handleSubscribeClick}>Settings</Nav.Link>
               <NavLink className="nav-link" to="/login">
                 Log In
               </NavLink>
