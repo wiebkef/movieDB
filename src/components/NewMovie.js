@@ -11,7 +11,8 @@ const NewMovie = () => {
   */
 
   return (
-    <div>
+    <div className="container col-4 text-center my-5">
+      <h1 className="text-light">Add a new movie</h1>
       <Form>
         <Form.Group className="m-2">
           <Form.Control type="text" placeholder="Movie Title" />
