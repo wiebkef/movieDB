@@ -1,11 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Form, Button } from "react-bootstrap";
 import SearchIcon from "../images/search.svg";
 
 function Search({ handleSearch }) {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate(`/search/${query}`);
