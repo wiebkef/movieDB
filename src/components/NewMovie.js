@@ -50,6 +50,22 @@ const NewMovie = () => {
           />
         </Form.Group>
         <Form.Group className="m-2">
+          <Form.Select
+            name="genre"
+            onChange={handleChange}
+            aria-label="Select the genre"
+          >
+            <option>Genre</option>
+            <option value="action">Action</option>
+            <option value="adventure">Adventure</option>
+            <option value="cartoons">Cartoons</option>
+            <option value="comedy">Comedy</option>
+            <option value="horror">Horror</option>
+            <option value="sci-fi">Sci-Fi</option>
+            <option value="thriller">Thriller</option>
+          </Form.Select>
+        </Form.Group>
+        <Form.Group className="m-2">
           <Form.Control
             type="number"
             placeholder="Rating: 1-10 Stars"

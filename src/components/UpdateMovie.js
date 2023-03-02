@@ -1,11 +1,22 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 function UpdateMovie() {
   const navigate = useNavigate();
   const { id } = useParams();
-  const [movie, setMovie] = useState({ title: "", director: "", year: 0, rating: 0, poster: "", description: "", imgurl: "" });
+  const [movie, setMovie] = useState({
+    title: "",
+    director: "",
+    year: 0,
+    genre: "",
+    rating: 0,
+    poster: "",
+    description: "",
+    imgurl: "",
+  });
 
   useEffect(() => {
     axios
@@ -23,93 +34,109 @@ function UpdateMovie() {
     e.preventDefault();
     const form = e.target;
     if (form.checkValidity()) {
-    axios
-      .put(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies/${id}`, movie)
-      .then((res) => navigate("/movies"))
-      .catch((e) => console.log(e));
-  } else {
-    form.reportValidity();
-  }
-};
+      axios
+        .put(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies/${id}`, movie)
+        .then((res) => navigate("/movies"))
+        .catch((e) => console.log(e));
+    } else {
+      form.reportValidity();
+    }
+  };
 
   return (
-    <div>
-      <h2>Update Movie</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="title">Title:</label>
-          <input
+    <div className="container col-4 text-center my-5">
+      <h1 className="text-light">Update a movie</h1>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="m-2 bg-dark">
+          <Form.Control
             type="text"
+            placeholder="Movie Title"
             name="title"
             value={movie.title}
             onChange={handleChange}
-            required
           />
-        </div>
-        <div>
-          <label htmlFor="director">Director:</label>
-          <input
+        </Form.Group>
+        <Form.Group className="m-2">
+          <Form.Control
             type="text"
+            placeholder="Director"
             name="director"
             value={movie.director}
             onChange={handleChange}
-            required
           />
-        </div>
-        <div>
-          <label htmlFor="year">Year:</label>
-          <input
+        </Form.Group>
+        <Form.Group className="m-2">
+          <Form.Control
             type="number"
-            value={movie.year}
+            placeholder="Year of Release (YYYY)"
+            min="1900"
+            max="2023"
             name="year"
+            value={movie.year}
             onChange={handleChange}
-            required
           />
-        </div>
-        <div>
-          <label htmlFor="rating">Rating:</label>
-          <input
+        </Form.Group>
+        <Form.Group className="m-2">
+          <Form.Select
+            name="genre"
+            value={movie.genre}
+            onChange={handleChange}
+            aria-label="Select the genre"
+          >
+            <option>Genre</option>
+            <option value="action">Action</option>
+            <option value="adventure">Adventure</option>
+            <option value="cartoons">Cartoons</option>
+            <option value="comedy">Comedy</option>
+            <option value="horror">Horror</option>
+            <option value="sci-fi">Sci-Fi</option>
+            <option value="thriller">Thriller</option>
+          </Form.Select>
+        </Form.Group>
+        <Form.Group className="m-2">
+          <Form.Control
             type="number"
-            value={movie.rating}
-            name="rating"
-            step="0.1"
-            min="0"
+            placeholder="Rating: 1-10 Stars"
+            min="1"
             max="10"
+            name="rating"
+            value={movie.rating}
             onChange={handleChange}
-            required
           />
-        </div>
-        <div>
-          <label htmlFor="poster">Poster URL:</label>
-          <input
-            type="url"
-            name="poster"
-            value={movie.poster}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="description">Description:</label>
-          <textarea
+        </Form.Group>
+        <Form.Group className=" m-2">
+          <Form.Control
+            as="textarea"
+            placeholder="Description"
+            style={{ height: "100px" }}
             name="description"
             value={movie.description}
             onChange={handleChange}
-            required
-          ></textarea>
-        </div>
-        <div>
-          <label htmlFor="imgurl">Image URL:</label>
-          <input
-            type="url"
+          />
+        </Form.Group>
+        <Form.Group className="m-2">
+          <Form.Control
+            type="text"
+            placeholder="Movie poster URL"
             name="imgurl"
             value={movie.imgurl}
             onChange={handleChange}
-            required
           />
-        </div>
-        <button>Update Movie</button>
-      </form>
+        </Form.Group>
+        <Form.Group className="m-2">
+          <Form.Control
+            type="text"
+            placeholder="Your name"
+            name="poster"
+            value={movie.poster}
+            onChange={handleChange}
+          />
+        </Form.Group>
+
+        <Button variant="light" type="submit">
+          Update movie
+        </Button>
+      </Form>
     </div>
   );
 }
