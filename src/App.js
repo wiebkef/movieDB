@@ -1,9 +1,8 @@
 import "./App.css";
 import Header from "./components/Header";
-import Gallery from "./components/Gallery";
 import Search from "./components/Search";
 import SearchResults from "./components/SearchResults";
-import Recipes from "./components/Movies";
+import Movies from "./components/Movies";
 import MovieDetails from "./components/MovieDetails";
 import Footer from "./components/Footer";
 import Auth from "./components/Auth";
@@ -27,8 +26,7 @@ function App() {
           path="/"
           element={
             <>
-              <Gallery />
-              <Recipes />
+              <Movies />
             </>
           }
         />
