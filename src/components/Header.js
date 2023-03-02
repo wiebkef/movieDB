@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import myLogo from './logo_CN.png';
-import { NavLink } from 'react-router-dom';
-import Subscribe from './Subscribe';
-import './Header.css';
+import React, { useState } from "react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import myLogo from "./logo_CN.png";
+import { NavLink } from "react-router-dom";
+import Subscribe from "./Subscribe";
+import "./Header.css";
 
 function Header() {
   const [showModal, setShowModal] = useState(false);
@@ -22,7 +22,7 @@ function Header() {
         collapseOnSelect
         expand="lg"
         variant="light"
-        style={{ width: '100%', position: 'sticky', top: 0 }}
+        style={{ width: "100%", position: "sticky", top: 0 }}
       >
         <Container>
           <Navbar fixed="top" />
@@ -43,7 +43,7 @@ function Header() {
                 Home
               </NavLink>
               <NavLink className="nav-link" to="/plans">
-              Plans
+                Plans
               </NavLink>
               <NavDropdown title="Categories">
                 <NavDropdown.Item>
@@ -53,37 +53,40 @@ function Header() {
                 </NavDropdown.Item>
                 <NavDropdown.Item>
                   <NavLink className="nav-link" to="/action">
-                  Action
+                    Action
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
                   <NavLink className="nav-link" to="/adventure">
-                  Adventure
+                    Adventure
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
                   <NavLink className="nav-link" to="/horror">
-                  Horror
+                    Horror
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
                   <NavLink className="nav-link" to="/sci-fi">
-                  Sci-fi
+                    Sci-fi
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
                   <NavLink className="nav-link" to="/comedy">
-                  Comedy
+                    Comedy
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
                   <NavLink className="nav-link" to="/cartoons">
-                  Сartoons
+                    Сartoons
                   </NavLink>
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
             <Nav>
+              <NavLink className="btn btn-outline-light" to="/newMovie">
+                Add Movie
+              </NavLink>
               <Nav.Link onClick={handleSubscribeClick}>Settings</Nav.Link>
               <NavLink className="nav-link" to="/login">
                 Log In
