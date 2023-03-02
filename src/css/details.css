@@ -17,3 +17,9 @@
 .light-purple-text {
   color: #e5b8f4;
 }
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+.bi {
+  fill: #e5b8f4;
+}
