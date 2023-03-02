@@ -1,28 +1,23 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-const contentful = require("contentful");
+import axios from "axios";
 
 export default function Movies() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    /*  const client = contentful.createClient({
-      space: process.env.REACT_APP_SPACE_ID,
-      accessToken: process.env.REACT_APP_ACCESS_TOKEN,
-      environment: process.env.REACT_APP_ENVIRONMENT_ID,
-    });
-    client
-      .getEntries()
-      .then((res) => setMovies(res.items))
-      .catch((err) => console.log(err)); */
+    axios
+      .get(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies`)
+      .then((res) => setMovies(res.data))
+      .catch((e) => console.log(e));
   }, []);
 
   return (
-    <div className="App container-lg text-center mb-5">
+    <div className="App container-lg text-center my-5">
       <div className="row text-center gx-3 gy-3">
         {movies.map((movie) => (
-          <div key={movie.sys.id} className="col">
-            <Link to={`/movie/${movie.sys.id}`} className="title">
+          <div key={movie.id} className="col">
+            <Link to={`/movie/${movie.id}`} className="title">
               <div
                 className="card text-light text-center m-auto"
                 style={{
@@ -31,9 +26,9 @@ export default function Movies() {
                 }}
               >
                 <img
-                  src={movie.fields.titleImage.fields.file.url}
+                  src={movie.imgurl}
                   className="card-img-top"
-                  alt={movie.fields.title}
+                  alt={movie.title}
                 />
                 <div className="card-body">
                   <h5
@@ -44,13 +39,11 @@ export default function Movies() {
                       overflow: "hidden",
                     }}
                   >
-                    {movie.fields.title}
+                    {movie.title}
                   </h5>
                   <div className="row text-center my-3">
-                    <div className="col text-start">
-                      {movie.fields.rating} stars
-                    </div>
-                    <div className="col text-end">by {movie.fields.author}</div>
+                    <div className="col text-start">{movie.rating} / 10</div>
+                    <div className="col text-end">by {movie.poster}</div>
                   </div>
                   <p
                     className="card-text"
@@ -60,7 +53,7 @@ export default function Movies() {
                       overflow: "hidden",
                     }}
                   >
-                    {movie.fields.shortDescription}
+                    {movie.description}
                   </p>
                   <button className="btn btn-warning border-0">
                     See movie
