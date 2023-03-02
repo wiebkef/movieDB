@@ -36,7 +36,7 @@ function App() {
           path="/search/:query"
           element={<SearchResults query={query} />}
         />
-        <Route path="/recipe/:id" element={<MovieDetails />} />
+        <Route path="/movies/:id" element={<MovieDetails />} />
         <Route path="/login" element={<Auth />} />
       </Routes>
       <Footer />
