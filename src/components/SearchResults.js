@@ -1,43 +1,35 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-const contentful = require("contentful");
+import axios from "axios";
 
-export default function Recipes(props) {
+export default function SearchResults() {
   const { query } = useParams();
-  const [recipes, setRecipes] = useState([]);
-  // const { query } = props;
-
+  const [movies, setMovies] = useState([]);
+console.log(query);
   useEffect(() => {
-    const client = contentful.createClient({
-      space: process.env.REACT_APP_SPACE_ID,
-      accessToken: process.env.REACT_APP_ACCESS_TOKEN,
-      environment: process.env.REACT_APP_ENVIRONMENT_ID,
-    });
-    client
-      .getEntries({
-        query: query,
-      })
-      .then((res) => setRecipes(res.items))
-      .catch((err) => console.log(err));
+    axios
+      .get(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies/search?query=${query}`)
+      .then((res) => setMovies(res.data))
+      .catch((e) => console.log(e));
   }, [query]);
+
   return (
     <div className="App container-lg text-center my-5">
       <div className="row text-center gx-3 gy-3">
-        {recipes.map((recipe) => (
-          <div key={recipe.sys.id} className="col">
-            <Link to={`/recipe/${recipe.sys.id}`} className="title">
+        {movies.map((movie) => (
+          <div key={movie.id} className="col">
+            <Link to={`/movie/${movie.id}`} className="title">
               <div
                 className="card text-light text-center m-auto"
                 style={{
                   minWidth: "18rem",
-                  maxWidth: "24rem",
                   backgroundColor: "#555",
                 }}
               >
                 <img
-                  src={recipe.fields.titleImage.fields.file.url}
+                  src={movie.imgurl}
                   className="card-img-top"
-                  alt={recipe.fields.title}
+                  alt={movie.title}
                 />
                 <div className="card-body">
                   <h5
@@ -48,15 +40,11 @@ export default function Recipes(props) {
                       overflow: "hidden",
                     }}
                   >
-                    {recipe.fields.title}
+                    {movie.title}
                   </h5>
                   <div className="row text-center my-3">
-                    <div className="col text-start">
-                      {recipe.fields.rating} stars
-                    </div>
-                    <div className="col text-end">
-                      by {recipe.fields.author}
-                    </div>
+                    <div className="col text-start">{movie.rating} / 10</div>
+                    <div className="col text-end">by {movie.poster}</div>
                   </div>
                   <p
                     className="card-text"
@@ -66,10 +54,10 @@ export default function Recipes(props) {
                       overflow: "hidden",
                     }}
                   >
-                    {recipe.fields.shortDescription}
+                    {movie.description}
                   </p>
                   <button className="btn btn-warning border-0">
-                    See recipe
+                    See movie
                   </button>
                 </div>
               </div>

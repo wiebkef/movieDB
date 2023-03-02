@@ -32,7 +32,7 @@ function App() {
         />
         <Route
           path="/search/:query"
-          element={<SearchResults query={query} />}
+          element={<SearchResults />}
         />
         <Route path="/movie/:id" element={<MovieDetails />} />
         <Route path="/newMovie" element={<NewMovie />} />
