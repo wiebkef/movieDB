@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import { Button } from "react-bootstrap";
 
 export default function SearchResults() {
   const { query } = useParams();
   const [movies, setMovies] = useState([]);
-console.log(query);
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies/search?query=${query}`)
+      .get(
+        `${process.env.REACT_APP_SERVER_BASE_URL}/api/movies/search/${query}`
+      )
       .then((res) => setMovies(res.data))
       .catch((e) => console.log(e));
   }, [query]);
@@ -23,6 +25,7 @@ console.log(query);
                 className="card text-light text-center m-auto"
                 style={{
                   minWidth: "18rem",
+                  maxWidth: "18rem",
                   backgroundColor: "#555",
                 }}
               >
@@ -30,6 +33,12 @@ console.log(query);
                   src={movie.imgurl}
                   className="card-img-top"
                   alt={movie.title}
+                  style={{
+                    width: "100%",
+                    height: "400px",
+                    objectFit: "cover",
+                    objectPosition: "0 0",
+                  }}
                 />
                 <div className="card-body">
                   <h5
@@ -42,6 +51,9 @@ console.log(query);
                   >
                     {movie.title}
                   </h5>
+                  <div className="row text-center mt-3 mb-1">
+                    <div className="col text-center">{movie.genre}&nbsp;</div>
+                  </div>
                   <div className="row text-center my-3">
                     <div className="col text-start">{movie.rating} / 10</div>
                     <div className="col text-end">by {movie.poster}</div>
@@ -56,9 +68,7 @@ console.log(query);
                   >
                     {movie.description}
                   </p>
-                  <button className="btn btn-warning border-0">
-                    See movie
-                  </button>
+                  <Button variant="outline-light">See Movie Details</Button>
                 </div>
               </div>
             </Link>

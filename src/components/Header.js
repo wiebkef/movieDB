@@ -52,38 +52,38 @@ function Header() {
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <NavLink className="nav-link" to="/action">
+                  <NavLink className="nav-link" to="/genre/Action">
                     Action
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <NavLink className="nav-link" to="/adventure">
+                  <NavLink className="nav-link" to="/genre/Adventure">
                     Adventure
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <NavLink className="nav-link" to="/drama">
-                    Drama
-                  </NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <NavLink className="nav-link" to="/horror">
-                    Horror
-                  </NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <NavLink className="nav-link" to="/sci-fi">
-                    Sci-fi
-                  </NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <NavLink className="nav-link" to="/comedy">
+                  <NavLink className="nav-link" to="/genre/Comedy">
                     Comedy
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <NavLink className="nav-link" to="/crime">
+                  <NavLink className="nav-link" to="/genre/Crime">
                     Crime
+                  </NavLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <NavLink className="nav-link" to="/genre/Drama">
+                    Drama
+                  </NavLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <NavLink className="nav-link" to="/genre/Horror">
+                    Horror
+                  </NavLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <NavLink className="nav-link" to="/genre/Sci-Fi">
+                    Sci-fi
                   </NavLink>
                 </NavDropdown.Item>
               </NavDropdown>

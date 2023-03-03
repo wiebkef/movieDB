@@ -30,14 +30,12 @@ function App() {
             </>
           }
         />
-        <Route
-          path="/search/:query"
-          element={<SearchResults />}
-        />
+        <Route path="/search/:query" element={<SearchResults />} />
         <Route path="/movie/:id" element={<MovieDetails />} />
         <Route path="/newMovie" element={<NewMovie />} />
         <Route path="/login" element={<Auth />} />
         <Route path="/update-movie/:id" element={<UpdateMovie />} />
+        <Route path="/genre/:genre" element={<Movies />} />
       </Routes>
       <Footer />
     </div>
