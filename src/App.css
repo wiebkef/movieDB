@@ -133,7 +133,7 @@ a.title:hover div {
 .ccontainer {
   display: flex;
   justify-content: center;
-  background-color: #f2cc5caf;
+  background-color: #6c4e75;
 }
 
 .search {
@@ -141,10 +141,8 @@ a.title:hover div {
   margin: 1rem 0;
 
   padding: 0.5rem 0.5rem;
-  border-radius: 1rem;
-  background: #400e32;
-  -webkit-box-shadow: 2px 2px 4px #1c1d1f, -2px -2px 4px #222527;
-  box-shadow: 2px 2px 4px #1c1d1f, -2px -2px 4px #222527;
+  border-radius: 10px;
+  background: #c4b0ca;
 }
 
 .search-content {
@@ -162,7 +160,7 @@ a.title:hover div {
   font-weight: 500;
   outline: none;
   color: #a1a1a1;
-  background: #400e32;
+  background: #c0b3c4;
 }
 
 .search img {
