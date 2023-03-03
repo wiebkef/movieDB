@@ -36,7 +36,7 @@ function UpdateMovie() {
     if (form.checkValidity()) {
       axios
         .put(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies/${id}`, movie)
-        .then((res) => navigate("/movies"))
+        .then((res) => navigate(`/movie/${id}`))
         .catch((e) => console.log(e));
     } else {
       form.reportValidity();
@@ -54,6 +54,7 @@ function UpdateMovie() {
             name="title"
             value={movie.title}
             onChange={handleChange}
+            autoFocus={true}
           />
         </Form.Group>
         <Form.Group className="m-2">
@@ -84,14 +85,16 @@ function UpdateMovie() {
             aria-label="Select the genre"
           >
             <option>Genre</option>
-            <option value="action">Action</option>
-            <option value="adventure">Adventure</option>
-            <option value="crime">Crime</option>
-            <option value="drama">Drama</option>
-            <option value="comedy">Comedy</option>
-            <option value="horror">Horror</option>
-            <option value="sci-fi">Sci-Fi</option>
-            <option value="thriller">Thriller</option>
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Cartoons">Cartoons</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Crime">Crime</option>
+            <option value="Drama">Drama</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Horror">Horror</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <option value="Thriller">Thriller</option>
           </Form.Select>
         </Form.Group>
         <Form.Group className="m-2">

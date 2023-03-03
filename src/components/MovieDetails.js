@@ -47,7 +47,7 @@ export default function MovieDetails() {
                     {movie.description}
                   </p>
                   <div className="row text-center mt-4 p-2 bg-light text-dark rounded-top">
-                    <div className="col-md-4 text-start">
+                    <div className="col-md-5 text-start">
                       {movie.rating} / 10
                       <div className="d-inline-flex p-1">
                         <svg
@@ -62,19 +62,17 @@ export default function MovieDetails() {
                         </svg>
                       </div>
                     </div>
-                    <div className="col-md-8 text-start">{movie.genre}</div>
+                    <div className="col-md-7 text-start">{movie.genre}</div>
                   </div>
                   <div className="row text-center mb-4 p-2 light-purple-bg text-dark rounded-bottom">
-                    <div className="d-flex">
-                      <div className="flex-fill text-start">
-                        Director: <strong className="">{movie.director}</strong>
-                      </div>
-                      <div className="flex-fill text-start">
-                        from <strong>{movie.year}</strong>
-                      </div>
-                      <div className="flex-fill text-start">
-                        {movie.poster}'s favourite
-                      </div>
+                    <div className="col-md-5 text-start">
+                      Director: <strong>{movie.director}</strong>
+                    </div>
+                    <div className="col-md-3 text-start">
+                      from <strong>{movie.year}</strong>
+                    </div>
+                    <div className="col-md-4 text-start">
+                      {movie.poster}'s favourite
                     </div>
                   </div>
                   <div className="row gap-2 justify-content-end">

@@ -22,6 +22,7 @@ export default function Movies() {
                 className="card text-light text-center m-auto"
                 style={{
                   minWidth: "18rem",
+                  maxWidth: "18rem",
                   backgroundColor: "#555",
                 }}
               >
@@ -29,6 +30,12 @@ export default function Movies() {
                   src={movie.imgurl}
                   className="card-img-top"
                   alt={movie.title}
+                  style={{
+                    width: "100%",
+                    height: "400px",
+                    objectFit: "cover",
+                    objectPosition: "0 0",
+                  }}
                 />
                 <div className="card-body">
                   <h5
@@ -41,6 +48,9 @@ export default function Movies() {
                   >
                     {movie.title}
                   </h5>
+                  <div className="row text-center mt-3 mb-1">
+                    <div className="col text-center">{movie.genre}&nbsp;</div>
+                  </div>
                   <div className="row text-center my-3">
                     <div className="col text-start">{movie.rating} / 10</div>
                     <div className="col text-end">by {movie.poster}</div>
