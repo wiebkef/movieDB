@@ -55,6 +55,7 @@ function UpdateMovie() {
             value={movie.title}
             onChange={handleChange}
             autoFocus={true}
+            required
           />
         </Form.Group>
         <Form.Group className="m-2">
@@ -64,6 +65,7 @@ function UpdateMovie() {
             name="director"
             value={movie.director}
             onChange={handleChange}
+            required
           />
         </Form.Group>
         <Form.Group className="m-2">
@@ -75,16 +77,18 @@ function UpdateMovie() {
             name="year"
             value={movie.year}
             onChange={handleChange}
+            required
           />
         </Form.Group>
         <Form.Group className="m-2">
           <Form.Select
             name="genre"
-            value={movie.genre}
+            value={movie.genre || ""}
             onChange={handleChange}
             aria-label="Select the genre"
+            required
           >
-            <option>Genre</option>
+            <option value="">Genre</option>
             <option value="Action">Action</option>
             <option value="Adventure">Adventure</option>
             <option value="Cartoons">Cartoons</option>
@@ -106,6 +110,7 @@ function UpdateMovie() {
             name="rating"
             value={movie.rating}
             onChange={handleChange}
+            required
           />
         </Form.Group>
         <Form.Group className=" m-2">
@@ -116,15 +121,17 @@ function UpdateMovie() {
             name="description"
             value={movie.description}
             onChange={handleChange}
+            required
           />
         </Form.Group>
         <Form.Group className="m-2">
           <Form.Control
-            type="text"
+            type="url"
             placeholder="Movie poster URL"
             name="imgurl"
             value={movie.imgurl}
             onChange={handleChange}
+            required
           />
         </Form.Group>
         <Form.Group className="m-2">
@@ -134,10 +141,11 @@ function UpdateMovie() {
             name="poster"
             value={movie.poster}
             onChange={handleChange}
+            required
           />
         </Form.Group>
 
-        <Button variant="light" type="submit">
+        <Button variant="outline-light" type="submit">
           Update movie
         </Button>
       </Form>

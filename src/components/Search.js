@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchIcon from "../images/search.svg";
 
-
 function Search({ handleSearch }) {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");

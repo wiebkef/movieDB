@@ -12,10 +12,7 @@ export default function MovieDetails() {
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies/${id}`)
-      .then((res) => {
-        console.log(res.data);
-        setMovie(res.data);
-      })
+      .then((res) => setMovie(res.data))
       .catch((e) => console.log(e));
   }, [id]);
 
@@ -85,7 +82,7 @@ export default function MovieDetails() {
                     <Button
                       onClick={handleRemove}
                       variant="outline-light"
-                      className="col-3 "
+                      className="col-3"
                     >
                       Remove
                     </Button>

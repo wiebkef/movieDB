@@ -6,16 +6,7 @@ import Form from "react-bootstrap/Form";
 
 const NewMovie = () => {
   const navigate = useNavigate();
-  const [movie, setMovie] = useState({
-    title: "",
-    director: "",
-    year: 0,
-    genre: "",
-    rating: 0,
-    poster: "",
-    description: "",
-    imgurl: "",
-  });
+  const [movie, setMovie] = useState(null);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setMovie({ ...movie, [name]: value });
@@ -24,7 +15,7 @@ const NewMovie = () => {
     e.preventDefault();
     axios
       .post(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies`, movie)
-      .then((res) => navigate("/movie"))
+      .then((res) => navigate(`/movie/${res.id}`))
       .catch((e) => console.log(e));
   };
 
@@ -39,6 +30,7 @@ const NewMovie = () => {
             name="title"
             onChange={handleChange}
             autoFocus={true}
+            required
           />
         </Form.Group>
         <Form.Group className="m-2">
@@ -47,6 +39,7 @@ const NewMovie = () => {
             placeholder="Director"
             name="director"
             onChange={handleChange}
+            required
           />
         </Form.Group>
         <Form.Group className="m-2">
@@ -57,6 +50,7 @@ const NewMovie = () => {
             max="2023"
             name="year"
             onChange={handleChange}
+            required
           />
         </Form.Group>
         <Form.Group className="m-2">
@@ -64,8 +58,9 @@ const NewMovie = () => {
             name="genre"
             onChange={handleChange}
             aria-label="Select the genre"
+            required
           >
-            <option>Genre</option>
+            <option value="">Genre</option>
             <option value="Action">Action</option>
             <option value="Adventure">Adventure</option>
             <option value="Cartoons">Cartoons</option>
@@ -86,6 +81,7 @@ const NewMovie = () => {
             max="10"
             name="rating"
             onChange={handleChange}
+            required
           />
         </Form.Group>
         <Form.Group className=" m-2">
@@ -95,14 +91,16 @@ const NewMovie = () => {
             style={{ height: "100px" }}
             name="description"
             onChange={handleChange}
+            required
           />
         </Form.Group>
         <Form.Group className="m-2">
           <Form.Control
-            type="text"
+            type="url"
             placeholder="Movie poster URL"
             name="imgurl"
             onChange={handleChange}
+            required
           />
         </Form.Group>
         <Form.Group className="m-2">
@@ -111,10 +109,10 @@ const NewMovie = () => {
             placeholder="Your name"
             name="poster"
             onChange={handleChange}
+            required
           />
         </Form.Group>
-
-        <Button variant="light" type="submit">
+        <Button variant="outline-light" type="submit">
           Add movie
         </Button>
       </Form>

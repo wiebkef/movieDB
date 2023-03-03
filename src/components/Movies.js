@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "../css/details.css";
+import { Button } from "react-bootstrap";
 
 export default function Movies() {
   const [movies, setMovies] = useState([]);
@@ -65,9 +67,7 @@ export default function Movies() {
                   >
                     {movie.description}
                   </p>
-                  <button className="btn btn-warning border-0">
-                    See movie
-                  </button>
+                  <Button variant="outline-light">See Movie Details</Button>
                 </div>
               </div>
             </Link>
