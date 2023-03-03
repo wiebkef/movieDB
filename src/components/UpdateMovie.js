@@ -86,7 +86,8 @@ function UpdateMovie() {
             <option>Genre</option>
             <option value="action">Action</option>
             <option value="adventure">Adventure</option>
-            <option value="cartoons">Cartoons</option>
+            <option value="crime">Crime</option>
+            <option value="drama">Drama</option>
             <option value="comedy">Comedy</option>
             <option value="horror">Horror</option>
             <option value="sci-fi">Sci-Fi</option>

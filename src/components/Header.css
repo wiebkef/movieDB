@@ -16,10 +16,7 @@
   transition: all 0.3s ease-in-out;
 }
 .navbar-toggler {
-  color: #e5b8f4 !important;
-}
-.navbar-toggler-icon {
-  color: #e5b8f4 !important;
+  background-color: #d7c6dd !important;
 }
 
 .nav-link:hover::before {

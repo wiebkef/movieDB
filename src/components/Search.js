@@ -17,7 +17,7 @@ function Search({ handleSearch }) {
       <div className="search">
         <form onSubmit={handleSubmit} className="search-content">
           <input
-            placeholder="Search for recipes"
+            placeholder="Search for movies"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           ></input>
