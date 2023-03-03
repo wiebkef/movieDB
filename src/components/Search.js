@@ -3,13 +3,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchIcon from "../images/search.svg";
 
-function Search({ handleSearch }) {
+function Search() {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate(`/search/${query}`);
-    handleSearch(query);
   };
   return (
     <div className="ccontainer">

@@ -15,7 +15,6 @@ function Header() {
     setShowModal(true);
   };
 
-
   return (
     <>
       <Navbar
@@ -47,7 +46,7 @@ function Header() {
                 Plans
               </NavLink>
               <NavDropdown title="Categories">
-                <NavDropdown.Item >
+                <NavDropdown.Item>
                   <NavLink className="nav-link" to="/top">
                     TOP Films
                   </NavLink>
@@ -60,6 +59,26 @@ function Header() {
                 <NavDropdown.Item>
                   <NavLink className="nav-link" to="/genre/Adventure">
                     Adventure
+                  </NavLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <NavLink className="nav-link" to="/genre/Comedy">
+                    Comedy
+                  </NavLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <NavLink className="nav-link" to="/genre/Crime">
+                    Crime
+                  </NavLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <NavLink className="nav-link" to="/genre/Drama">
+                    Crime
+                  </NavLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <NavLink className="nav-link" to="/genre/Fantasy">
+                    Fantasy
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
@@ -78,13 +97,8 @@ function Header() {
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <NavLink className="nav-link" to="/genre/Comedy">
-                    Comedy
-                  </NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <NavLink className="nav-link" to="/genre/Crime">
-                    Crime
+                  <NavLink className="nav-link" to="/genre/Thriller">
+                    Thriller
                   </NavLink>
                 </NavDropdown.Item>
               </NavDropdown>

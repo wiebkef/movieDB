@@ -1,18 +1,27 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import "../css/details.css";
 import { Button } from "react-bootstrap";
 
 export default function Movies() {
   const [movies, setMovies] = useState([]);
-
+  const { genre } = useParams();
   useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies`)
-      .then((res) => setMovies(res.data))
-      .catch((e) => console.log(e));
-  }, []);
+    if (genre) {
+      axios
+        .get(
+          `${process.env.REACT_APP_SERVER_BASE_URL}/api/movies/genre/${genre}`
+        )
+        .then((res) => setMovies(res.data))
+        .catch((e) => console.log(e));
+    } else {
+      axios
+        .get(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies`)
+        .then((res) => setMovies(res.data))
+        .catch((e) => console.log(e));
+    }
+  }, [genre]);
 
   return (
     <div className="App container-lg text-center my-5">
