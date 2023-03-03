@@ -15,6 +15,7 @@ function Header() {
     setShowModal(true);
   };
 
+
   return (
     <>
       <Navbar
@@ -46,43 +47,43 @@ function Header() {
                 Plans
               </NavLink>
               <NavDropdown title="Categories">
-                <NavDropdown.Item>
+                <NavDropdown.Item >
                   <NavLink className="nav-link" to="/top">
                     TOP Films
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <NavLink className="nav-link" to="/action">
+                  <NavLink className="nav-link" to="/genre/Action">
                     Action
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <NavLink className="nav-link" to="/adventure">
+                  <NavLink className="nav-link" to="/genre/Adventure">
                     Adventure
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <NavLink className="nav-link" to="/drama">
+                  <NavLink className="nav-link" to="/genre/Drama">
                     Drama
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <NavLink className="nav-link" to="/horror">
+                  <NavLink className="nav-link" to="/genre/Horror">
                     Horror
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <NavLink className="nav-link" to="/sci-fi">
+                  <NavLink className="nav-link" to="/genre/Sci-Fi">
                     Sci-fi
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <NavLink className="nav-link" to="/comedy">
+                  <NavLink className="nav-link" to="/genre/Comedy">
                     Comedy
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <NavLink className="nav-link" to="/crime">
+                  <NavLink className="nav-link" to="/genre/Crime">
                     Crime
                   </NavLink>
                 </NavDropdown.Item>
