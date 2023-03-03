@@ -62,6 +62,11 @@ function Header() {
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
+                  <NavLink className="nav-link" to="/drama">
+                    Drama
+                  </NavLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
                   <NavLink className="nav-link" to="/horror">
                     Horror
                   </NavLink>
@@ -77,8 +82,8 @@ function Header() {
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <NavLink className="nav-link" to="/cartoons">
-                    Сartoons
+                  <NavLink className="nav-link" to="/crime">
+                    Crime
                   </NavLink>
                 </NavDropdown.Item>
               </NavDropdown>
