@@ -15,7 +15,7 @@ const NewMovie = () => {
     e.preventDefault();
     axios
       .post(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies`, movie)
-      .then((res) => navigate(`/movie/${res.id}`))
+      .then((res) => navigate(`/movie/${res.data.id}`))
       .catch((e) => console.log(e));
   };
 
