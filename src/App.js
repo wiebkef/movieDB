@@ -10,8 +10,6 @@ import NewMovie from "./components/NewMovie";
 import UpdateMovie from "./components/UpdateMovie";
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import MoviesGenre from "./components/MoviesGenre";
-
 
 function App() {
   const [query, setQuery] = useState("");
@@ -36,7 +34,7 @@ function App() {
         <Route path="/movie/:id" element={<MovieDetails />} />
         <Route path="/newMovie" element={<NewMovie />} />
         <Route path="/login" element={<Auth />} />
-        <Route path="/genre/:genre" element={<MoviesGenre />} />
+        <Route path="/genre/:genre" element={<Movies />} />
         <Route path="/update-movie/:id" element={<UpdateMovie />} />
         <Route path="/genre/:genre" element={<Movies />} />
       </Routes>
