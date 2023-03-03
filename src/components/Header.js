@@ -73,6 +73,16 @@ function Header() {
                 </NavDropdown.Item>
                 <NavDropdown.Item>
                   <NavLink className="nav-link" to="/genre/Drama">
+                    Crime
+                  </NavLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <NavLink className="nav-link" to="/genre/Fantasy">
+                    Fantasy
+                  </NavLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <NavLink className="nav-link" to="/genre/Drama">
                     Drama
                   </NavLink>
                 </NavDropdown.Item>
@@ -84,6 +94,11 @@ function Header() {
                 <NavDropdown.Item>
                   <NavLink className="nav-link" to="/genre/Sci-Fi">
                     Sci-fi
+                  </NavLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <NavLink className="nav-link" to="/genre/Thriller">
+                    Thriller
                   </NavLink>
                 </NavDropdown.Item>
               </NavDropdown>
