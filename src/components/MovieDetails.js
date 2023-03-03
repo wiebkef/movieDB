@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "../css/details.css";
 import { Button } from "react-bootstrap";
+import Comments from "./Comments";
 
 export default function MovieDetails() {
   const navigate = useNavigate();
@@ -29,10 +30,10 @@ export default function MovieDetails() {
   return (
     <div className="App container mt-5 mb-5 text-start">
       <div className="row">
-        <div id={movie.id} className="col">
+        <div className="col">
           <div className="card text-light mb-3 dark-purple-bg">
             <div className="row g-0">
-              <div className="col-md-4 light-purple-bg rounded-start">
+              <div className="col-md-4 dark-purple-bg rounded-start">
                 <img
                   src={movie.imgurl}
                   className="img-fluid rounded-start text-dark"
@@ -62,7 +63,9 @@ export default function MovieDetails() {
                         </svg>
                       </div>
                     </div>
-                    <div className="col-md-8 text-start">{movie.genre}</div>
+                    <div className="col-md-8 text-start">
+                      {movie.poster}'s favourite
+                    </div>
                   </div>
                   <div className="row text-center mb-4 p-2 light-purple-bg text-dark rounded-bottom">
                     <div className="d-flex">
@@ -72,9 +75,7 @@ export default function MovieDetails() {
                       <div className="flex-fill text-start">
                         from <strong>{movie.year}</strong>
                       </div>
-                      <div className="flex-fill text-start">
-                        {movie.poster}'s favourite
-                      </div>
+                      <div className="flex-fill text-start">{movie.genre}</div>
                     </div>
                   </div>
                   <div className="row gap-2 justify-content-end">
@@ -91,6 +92,9 @@ export default function MovieDetails() {
                     >
                       Remove
                     </Button>
+                  </div>
+                  <div className="mt-5">
+                    <Comments />
                   </div>
                 </div>
               </div>
