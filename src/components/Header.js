@@ -3,10 +3,10 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import myLogo from "./logo_CN.png";
+import myLogo from "../images/logo_CN.png";
 import { NavLink } from "react-router-dom";
 import Subscribe from "./Subscribe";
-import "./Header.css";
+import "../css/Header.css";
 
 function Header() {
   const [showModal, setShowModal] = useState(false);

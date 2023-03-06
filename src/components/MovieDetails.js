@@ -4,11 +4,13 @@ import axios from "axios";
 import "../css/details.css";
 import { Button } from "react-bootstrap";
 import Comments from "./Comments";
+import DeleteMovie from "./DeleteMovie";
 
 export default function MovieDetails() {
   const navigate = useNavigate();
   const { id } = useParams();
   const [movie, setMovie] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     axios
@@ -22,6 +24,10 @@ export default function MovieDetails() {
       .delete(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies/${id}`)
       .then((res) => navigate("/"))
       .catch((e) => console.log(e));
+  };
+
+  const openConfirmation = () => {
+    setShowModal(true);
   };
 
   return (
@@ -60,7 +66,7 @@ export default function MovieDetails() {
                         </svg>
                       </div>
                     </div>
-                    <div className="col-md-8 text-start">
+                    <div className="col-md-7 text-start text-md-end">
                       {movie.poster}'s favourite
                     </div>
                   </div>
@@ -83,7 +89,7 @@ export default function MovieDetails() {
                       Edit
                     </Link>
                     <Button
-                      onClick={handleRemove}
+                      onClick={openConfirmation}
                       variant="outline-light"
                       className="col-3"
                     >
@@ -99,6 +105,11 @@ export default function MovieDetails() {
           </div>
         </div>
       </div>
+      <DeleteMovie
+        show={showModal}
+        handleRemove={handleRemove}
+        handleClose={() => setShowModal(false)}
+      />
     </div>
   );
 }

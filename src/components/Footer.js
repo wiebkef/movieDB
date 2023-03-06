@@ -1,11 +1,14 @@
 import React from "react";
-import myLogo from './logo_CN.png';
+import myLogo from "../images/logo_CN.png";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Footer() {
   return (
-    <footer className="text-center text-lg-start" style={{ backgroundColor: "#2D033B", color: "#E5B8F4"}}>
+    <footer
+      className="text-center text-lg-start"
+      style={{ backgroundColor: "#2D033B", color: "#E5B8F4" }}
+    >
       <section className="py-5">
         <div className="container text-center text-md-start">
           <div className="row mt-3">
@@ -15,29 +18,31 @@ function Footer() {
                 CINEHOUSE
               </h6>
               <p>
-              This is your ultimate guide to the world of movies. Find reviews, trailers, and the latest news on your favorite films.
+                This is your ultimate guide to the world of movies. Find
+                reviews, trailers, and the latest news on your favorite films.
               </p>
             </div>
             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-2">
               <h6 className="text-uppercase fw-bold mb-2">Explore</h6>
               <p className="m-0">
                 <a className="text-reset text-decoration-none" href="#!">
-                Movies
+                  Movies
                 </a>
               </p>
               <p className="m-0">
                 <a className="text-reset text-decoration-none" href="#!">
-                Trailers
+                  Trailers
                 </a>
               </p>
               <p className="m-0">
                 <a className="text-reset text-decoration-none" href="#!">
-                Reviews
+                  Reviews
                 </a>
               </p>
               <p className="m-0">
                 <a className="text-reset text-decoration-none" href="#!">
-                News                </a>
+                  News{" "}
+                </a>
               </p>
             </div>
             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-2">
@@ -66,11 +71,9 @@ function Footer() {
             <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-2">
               <h6 className="text-uppercase fw-bold mb-2">Contact Us</h6>
               <p className="m-0 text-decoration-none">
-              Berlin, Müllerstr. 25a, Germany
+                Berlin, Müllerstr. 25a, Germany
               </p>
-              <p className="m-0 text-decoration-none">
-              cinehouse@gmail.com
-              </p>
+              <p className="m-0 text-decoration-none">cinehouse@gmail.com</p>
               <p className="m-0 text-decoration-none">+ 49 234 567 23</p>
               <p className="m-0 text-decoration-none">Privacy Policy</p>
             </div>
@@ -107,7 +110,7 @@ function Footer() {
       >
         © 2023 Copyright:{" "}
         <Link to="/" className="text-light">
-        CINEHOUSE
+          CINEHOUSE
         </Link>
       </div>
     </footer>
