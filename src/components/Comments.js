@@ -5,7 +5,6 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 const Comments = () => {
-  ////
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState();
   const { id } = useParams();

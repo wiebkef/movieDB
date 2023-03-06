@@ -60,7 +60,7 @@ export default function MovieDetails() {
                         </svg>
                       </div>
                     </div>
-                    <div className="col-md-8 text-start">
+                    <div className="col-md-7 text-start text-md-end">
                       {movie.poster}'s favourite
                     </div>
                   </div>
